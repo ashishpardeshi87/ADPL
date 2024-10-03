@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Cursive, Brush Script MT;
+            background-color: #48eeff;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1, h2 {
+            text-align: center;
+        }
+
+        form {
+            background-color: #f5906d;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            width: 120px;
+            margin-right: 10px;
+        }
+
+        .form-group input[type="text"] {
+            flex-grow: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+
+<form>
+    <h1><strong>Cyber Security</strong></h1>
+    <h2><strong>Student Information Form</strong></h2>
+
+    <div class="form-group">
+        <label for="fname"><strong>First name:</strong></label>
+        <input type="text" id="fname" name="fname">
+    </div>
+    
+    <div class="form-group">
+        <label for="lname"><strong>Last name:</strong></label>
+        <input type="text" id="lname" name="lname">
+    </div>
+    
+    <div class="form-group">
+        <label for="prn"><strong>PRN:</strong></label>
+        <input type="text" id="prn" name="prn">
+    </div>
+
+    <label><strong>Studying in:</strong></label><br><br>
+    <div class="form-group">
+        <input type="radio" id="firstYear" name="year" value="First Year">
+        <label for="firstYear"><strong>First Year</strong></label>
+    </div>
+
+    <div class="form-group">
+        <input type="radio" id="secondYear" name="year" value="Second Year">
+        <label for="secondYear"><strong>Second Year</strong></label>
+    </div>
+
+    <div class="form-group">
+        <input type="radio" id="thirdYear" name="year" value="Third Year">
+        <label for="thirdYear"><strong>Third Year</strong></label>
+    </div>
+
+    <div class="form-group">
+        <input type="radio" id="fourthYear" name="year" value="Fourth Year">
+        <label for="fourthYear"><strong>Fourth Year</strong></label>
+    </div>
+    
+    <br>
+    <input type="submit" value="submit">
+</form>
+
+</body>
+</html>
