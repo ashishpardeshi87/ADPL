@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+	api:
+		build:
+			context: ./backend
+			dockerfile: Dockerfile
+		ports:
+			- "8000:8000"
+		environment:
+			- API_KEY=${API_KEY}
+			- DB_PATH=/data/db.sqlite3
+		volumes:
+			- ./backend:/app
+			- ./data:/data
+		command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
