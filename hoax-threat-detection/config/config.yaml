@@ -1,0 +1,133 @@
+# Hoax Threat Detection System Configuration
+
+system:
+  name: "Hoax Threat Detection System"
+  version: "1.0.0"
+  environment: "development"
+  debug: true
+
+database:
+  main:
+    type: "postgresql"
+    host: "localhost"
+    port: 5432
+    name: "threat_detection"
+    user: "threat_admin"
+    password: "${DB_PASSWORD}"
+  
+  cache:
+    type: "redis"
+    host: "localhost"
+    port: 6379
+    db: 0
+  
+  nosql:
+    type: "mongodb"
+    host: "localhost"
+    port: 27017
+    database: "threat_analytics"
+
+monitoring:
+  email:
+    enabled: true
+    imap_server: "imap.gmail.com"
+    imap_port: 993
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+  
+  social_media:
+    twitter:
+      enabled: true
+      api_key: "${TWITTER_API_KEY}"
+      api_secret: "${TWITTER_API_SECRET}"
+    
+    facebook:
+      enabled: false
+      app_id: "${FACEBOOK_APP_ID}"
+      app_secret: "${FACEBOOK_APP_SECRET}"
+    
+    telegram:
+      enabled: true
+      bot_token: "${TELEGRAM_BOT_TOKEN}"
+
+threat_detection:
+  confidence_threshold: 0.75
+  risk_levels:
+    low: 0.3
+    medium: 0.6
+    high: 0.85
+    critical: 0.95
+  
+  keywords_file: "data/threat_keywords.json"
+  patterns_file: "data/threat_patterns.json"
+
+nlp:
+  model: "bert-base-uncased"
+  max_length: 512
+  batch_size: 32
+  language_models:
+    - "en_core_web_lg"
+    - "en_core_web_trf"
+
+forensics:
+  ip_geolocation:
+    enabled: true
+    provider: "geoip2"
+    database: "data/GeoLite2-City.mmdb"
+  
+  device_fingerprinting:
+    enabled: true
+    track_cookies: true
+    track_canvas: true
+    track_webgl: true
+  
+  metadata_extraction:
+    extract_ip: true
+    extract_headers: true
+    extract_timestamps: true
+    extract_device_info: true
+
+behavioral_analysis:
+  profile_window_days: 30
+  minimum_events: 3
+  similarity_threshold: 0.8
+  features:
+    - "writing_style"
+    - "posting_time"
+    - "communication_frequency"
+    - "language_patterns"
+    - "device_consistency"
+
+dashboard:
+  host: "0.0.0.0"
+  port: 8000
+  refresh_interval: 30
+  max_alerts_display: 100
+  
+security:
+  encryption:
+    enabled: true
+    algorithm: "AES-256"
+  
+  authentication:
+    enabled: true
+    jwt_secret: "${JWT_SECRET}"
+    token_expiry: 3600
+  
+  rate_limiting:
+    enabled: true
+    requests_per_minute: 60
+
+compliance:
+  data_retention_days: 90
+  anonymization_enabled: true
+  audit_logging: true
+  gdpr_compliant: true
+  legal_jurisdiction: "US"
+
+logging:
+  level: "INFO"
+  file: "logs/threat_detection.log"
+  max_size: "100MB"
+  backup_count: 10
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
