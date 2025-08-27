@@ -1,0 +1,58 @@
+{
+  "linguistic_patterns": [
+    {
+      "pattern": "bomb.*(?:explode|detonate|blow)",
+      "severity": "high",
+      "description": "Direct bomb threat pattern"
+    },
+    {
+      "pattern": "(?:placed|planted|hidden).*(?:bomb|explosive|device)",
+      "severity": "high",
+      "description": "Placement threat pattern"
+    },
+    {
+      "pattern": "(?:will|going to|about to).*(?:blow up|explode|detonate)",
+      "severity": "high",
+      "description": "Future threat pattern"
+    },
+    {
+      "pattern": "(?:evacuate|clear|leave).*(?:building|area|immediately)",
+      "severity": "medium",
+      "description": "Evacuation warning pattern"
+    },
+    {
+      "pattern": "(?:\\d+).*(?:minutes|hours|days).*(?:bomb|explode|detonate)",
+      "severity": "high",
+      "description": "Time-specific threat pattern"
+    },
+    {
+      "pattern": "(?:if|unless).*(?:demands|money|release).*(?:bomb|explode)",
+      "severity": "high",
+      "description": "Conditional threat pattern"
+    }
+  ],
+  "behavioral_patterns": {
+    "escalation": {
+      "description": "Messages showing increasing urgency or aggression",
+      "indicators": ["increasing frequency", "shorter intervals", "more explicit language"]
+    },
+    "anonymization_attempts": {
+      "description": "Patterns indicating attempts to hide identity",
+      "indicators": ["VPN usage", "TOR network", "disposable email", "new accounts"]
+    },
+    "repetitive_threats": {
+      "description": "Similar threats from potentially same source",
+      "indicators": ["similar wording", "same targets", "consistent timing"]
+    }
+  },
+  "communication_patterns": {
+    "email": {
+      "suspicious_domains": ["guerrillamail.com", "mailinator.com", "10minutemail.com"],
+      "header_anomalies": ["spoofed sender", "mismatched reply-to", "suspicious routing"]
+    },
+    "social_media": {
+      "account_indicators": ["new account", "no profile picture", "no followers", "random username"],
+      "posting_patterns": ["burst activity", "single purpose", "no other interactions"]
+    }
+  }
+}

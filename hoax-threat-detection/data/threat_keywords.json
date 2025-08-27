@@ -1,0 +1,83 @@
+{
+  "high_risk_keywords": [
+    "bomb",
+    "explosive",
+    "detonate",
+    "explode",
+    "blast",
+    "IED",
+    "C4",
+    "TNT",
+    "dynamite",
+    "timer",
+    "trigger",
+    "remote control",
+    "pressure plate",
+    "suicide vest",
+    "car bomb",
+    "package bomb",
+    "pipe bomb"
+  ],
+  "threat_indicators": [
+    "will blow up",
+    "going to explode",
+    "set to detonate",
+    "planted a bomb",
+    "hidden explosive",
+    "tick tock",
+    "countdown",
+    "boom",
+    "evacuate",
+    "clear the area",
+    "get out now",
+    "warning",
+    "this is not a drill",
+    "you have been warned"
+  ],
+  "location_keywords": [
+    "airport",
+    "station",
+    "school",
+    "university",
+    "hospital",
+    "mall",
+    "shopping center",
+    "government building",
+    "embassy",
+    "courthouse",
+    "stadium",
+    "concert",
+    "event",
+    "bridge",
+    "tunnel"
+  ],
+  "time_indicators": [
+    "today",
+    "tomorrow",
+    "tonight",
+    "at noon",
+    "midnight",
+    "in hours",
+    "in minutes",
+    "soon",
+    "imminent",
+    "scheduled",
+    "timed"
+  ],
+  "hoax_indicators": [
+    "prank",
+    "joke",
+    "fake",
+    "just kidding",
+    "lol",
+    "haha",
+    "gotcha",
+    "trolling",
+    "for fun"
+  ],
+  "severity_modifiers": {
+    "high": ["multiple", "several", "mass", "large scale", "coordinated"],
+    "medium": ["single", "one", "specific", "targeted"],
+    "low": ["maybe", "might", "possibly", "could"]
+  }
+}
